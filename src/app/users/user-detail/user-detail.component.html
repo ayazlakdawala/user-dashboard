@@ -1,0 +1,18 @@
+<ng-container *ngIf="user$ | async as user">
+    <a [routerLink]="['/users']"> Users </a> > {{user.name}}
+    <div>{{user.name}}</div>
+    <div>{{user.username}}</div>
+    <div>{{user.email}}</div>
+    <hr>
+    <div> Posts by {{user.name}} </div>
+
+    <ng-container *ngFor="let post of posts$ | async">
+        
+        <div>{{post.title}}</div>
+        <div>{{post.body}}</div>
+        <hr>
+    </ng-container>
+</ng-container>
+
+
+

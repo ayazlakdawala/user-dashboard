@@ -1,0 +1,3 @@
+<div *ngFor="let user of users$ | async">
+    <span> <a [routerLink] ="['/user', user.id]">{{user.id}}</a> {{user.name}} </span>
+</div>
