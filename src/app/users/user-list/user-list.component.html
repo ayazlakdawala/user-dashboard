@@ -1,3 +1,17 @@
-<div *ngFor="let user of users$ | async">
-    <span> <a [routerLink] ="['/user', user.id]">{{user.id}}</a> {{user.name}} </span>
-</div>
+<input type=text [formControl]="searchInput">
+<select [formControl]="sortBy">
+    <option selected value="name">Name</option>
+    <option value="username">User name</option>
+    <option value="email">Email</option>
+</select>
+
+<ng-container *ngIf="users$ | async as users">
+    <div *ngFor="let user of users | sort: sortBy.value | search: searchTerm">
+        <div [routerLink] ="['/user', user.id]">
+            <div>{{user.name}}</div>
+            <div>{{user.username}}</div>
+            <div><a href="mailto:{{user.email}}" (click)="$event.stopPropagation();">{{user.email}}</a></div>
+        </div>
+        <hr>
+    </div>
+</ng-container>
