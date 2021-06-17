@@ -5,3 +5,17 @@
     border-radius: 50%;
     display: inline-block;
   }
+
+.container.list > :nth-child(even){
+  background-color:rgba(243, 242, 242);
+}
+
+@media (max-width: 767.98px) {
+  .border-sm-left-none {
+    border-left: none !important; }
+  .border-sm-right-none {
+    border-right: none !important; }
+  .border-sm-top-none {
+    border-top: none !important; }
+  .border-sm-bottom-none {
+    border-bottom: none !important; } }
