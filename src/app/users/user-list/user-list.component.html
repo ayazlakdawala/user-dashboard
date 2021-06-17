@@ -25,10 +25,13 @@
         </div>
     </div>
 
-    <!--List-->
+    <!--User List-->
     <div class="flex-grow-1 ps-md-3 pe-md-3 pb-3">
         <div class="container list" *ngIf="users$ | async as users">
-            <div class="row border-top border-sm-left-none border-sm-right-none border-start border-end align-items-center pt-2 pb-2 ps-2" *ngFor="let user of users | sort: sortBy.value | search: searchTerm">
+            <div class="row border-top border-sm-left-none border-sm-right-none border-start border-end align-items-center pt-2 pb-2 ps-2"
+                 *ngFor="let user of users | sort: sortBy.value | search: searchTerm"
+                 [routerLink] ="['/user', user.id]"
+            >
                 <div class="rounded-circle col-3 pt-2 pb-2 me-2"></div>
                 <div class="col">
                     <div class="row row-cols-1 row-cols-md-2">
@@ -41,55 +44,3 @@
         </div>
     </div>
 </div>
-
-
-<!-- <div class="d-flex flex-column">
-
-    
-    <div class="container">
-        <div class="row mb-3 align-items-center">
-            <div class="col-auto me-auto"> Users</div>
-
-            <div class="col-auto">
-                <label for="inputSearch" class="form-label">Search</label>
-                <input type="text" id="inputSearch" class="form-control" [formControl]="searchInput">
-            </div>
-            
-            <div class="col-auto">
-                <label for="selectSortBy" class="form-label">Sort by</label>
-                <select id="selectSortBy" class="form-control" [formControl]="sortBy">
-                    <option selected value="name">Name</option>
-                    <option value="username">User name</option>
-                    <option value="email">Email</option>
-                </select>
-            </div>
-        </div>
-
-    <ng-container *ngIf="users$ | async as users">
-        <div class="row border border-1" [routerLink] ="['/user', user.id]" *ngFor="let user of users | sort: sortBy.value | search: searchTerm">
-            <div class="col-4 rounded-circle"></div>
-            <div class="col">
-                <div class="row row-cols-1 row-cols-sm-2">
-                    <div class="col">
-                        <div>{{user.name}}</div>
-                        <div>{{user.username}}</div>
-                    </div>
-                    
-                    <div class="col"><a href="mailto:{{user.email}}" (click)="$event.stopPropagation();">{{user.email}}</a></div>
-                </div>
-                
-            </div>
-            
-        </div>
-    </ng-container>
-
-    </div>
-
-    
-
-</div>
-
-
-
-
- -->
