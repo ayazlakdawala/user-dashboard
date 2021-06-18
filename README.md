@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
 ## Description
-This responsive web application, designed for mobile and desktop devices, provides ability for a user to view the list of Users, their details and posts.
+This responsive web application, designed for mobile and desktop devices, provides ability for a user to view the list of Users, their details and posts. You can clone the project using following link https://github.com/ayazlakdawala/user-dashboard.git
 
 ## Development server
 
