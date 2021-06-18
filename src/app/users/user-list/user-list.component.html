@@ -27,9 +27,9 @@
 
     <!--User List-->
     <div class="flex-grow-1 ps-md-3 pe-md-3 pb-3">
-        <div class="container list" *ngIf="users$ | async as users">
+        <div class="container list">
             <div class="row border-top border-sm-left-none border-sm-right-none border-start border-end align-items-center pt-2 pb-2 ps-2"
-                 *ngFor="let user of users | sort: sortBy.value | search: searchTerm"
+                 *ngFor="let user of finalUserList$ | async"
                  [routerLink] ="['/user', user.id]"
             >
                 <div class="rounded-circle col-3 pt-2 pb-2 me-2"></div>

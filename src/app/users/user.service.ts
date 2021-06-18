@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { User } from './user';
 import { Observable } from 'rxjs';
+import { User } from './user';
 import { Post } from './post';
 
+/**
+ * @author Ayaz Lakdawala
+ * @description Service class to fetch user data.
+ */
 @Injectable({
   providedIn: 'root'
 })

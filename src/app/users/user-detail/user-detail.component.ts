@@ -5,6 +5,10 @@ import { Post } from '../post';
 import { User } from '../user';
 import { UserService } from '../user.service';
 
+/**
+ * @author Ayaz Lakdawala
+ * @description Component class to display users details.
+ */
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
@@ -18,7 +22,6 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private service: UserService
   ) {}
 
